@@ -1,7 +1,27 @@
 {
-  "name": "Wa-OpenAI",
-  "description": "AI WhatsApp Bot",
+  "name": "Wa-openAI",
+  "description": "whatsapp md bot AI build with bailes",
   "repository": "https://github.com/azaa887777/Wa-OpenAI",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
-  "keywords": ["bot", "whatsapp", "whatsapp-bot", "ai"]
+  "logo": "",
+  "keywords": ["ai", "bot", "whatsapp bot", "whatsapp ai", "multi device"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+   "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
 }
