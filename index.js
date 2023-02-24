@@ -1,6 +1,6 @@
-const sessionName = "yusril";
-const donet = "https://saweria.co/sansekai";
-const owner = ["6287878817169"];
+const sessionName = "oussama";
+const donet = "fb.com/oussama.bakrine";
+const owner = ["212612460628"];
 const {
   default: sansekaiConnect,
   useSingleFileAuthState,
@@ -157,7 +157,7 @@ async function startHisoka() {
   const client = sansekaiConnect({
     logger: pino({ level: "silent" }),
     printQRInTerminal: true,
-    browser: ["Wa-OpenAI - Sansekai", "Safari", "3.0"],
+    browser: ["Wa-OpenAI - oussama", "Safari", "3.0"],
     auth: state,
   });
 
@@ -270,7 +270,7 @@ async function startHisoka() {
         console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
         process.exit();
       } else if (reason === DisconnectReason.loggedOut) {
-        console.log(`Device Logged Out, Please Delete Session file yusril.json and Scan Again.`);
+        console.log(`Device Logged Out, Please Delete Session file oussama.json and Scan Again.`);
         process.exit();
       } else if (reason === DisconnectReason.restartRequired) {
         console.log("Restart Required, Restarting...");
@@ -284,9 +284,9 @@ async function startHisoka() {
       }
     } else if (connection === "open") {
       console.log(color("Bot success conneted to server", "green"));
-      console.log(color("Donate for creator https://saweria.co/sansekai", "yellow"));
+      console.log(color("Donate for creator fb.com/oussama.bakrine", "yellow"));
       console.log(color("Type /menu to see menu"));
-      client.sendMessage(owner + "@s.whatsapp.net", { text: `Bot started!\n\njangan lupa support ya bang :)\n${donet}` });
+      client.sendMessage(owner + "@s.whatsapp.net", { text: `Bot started!\n\nfollow me please in😐\n fb.com/oussama.bakrine\ninstagram.com/oussama_bakrine\n\nthanks for using my bot :) ` });
     }
     // console.log('Connected...', update)
   });
