@@ -2,7 +2,7 @@
   "name": "Wa-openAI",
   "description": "whatsapp md bot AI build with bailes",
   "repository": "https://github.com/azaa887777/Wa-OpenAI",
-  "logo": "",
+  "logo": "https://telegra.ph/file/6c5b747d9b902889eb653.jpg",
   "keywords": ["ai", "bot", "whatsapp bot", "whatsapp ai", "multi device"],
   "buildpacks": [
     {
