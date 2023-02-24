@@ -27,7 +27,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
         : "";
     var budy = typeof m.text == "string" ? m.text : "";
     // var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/"
-    var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "/";
+    var prefix = /^[\\/!#.]/gi.test(body) ? body.match(/^[\\/!#.]/gi) : "";
     const isCmd2 = body.startsWith(prefix);
     const command = body.replace(prefix, "").trim().split(/ +/).shift().toLowerCase();
     const args = body.trim().split(/ +/).slice(1);
@@ -76,16 +76,16 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
             
 *(ChatGPT)*
 Cmd: ${prefix}ai 
-Tanyakan apa saja kepada AI. 
+description :in this cmd Write any question and I will try to answer it.\nفي هذا الامر اكتب اي سؤال وسأحاول الإجابة عليه
 
 *(DALL-E)*
-Cmd: ${prefix}img
-Membuat gambar dari teks`)
+Cmd: ${prefix}dl
+description :in this cmd write What do you want me to draw for you?\nفي هذا الامر اكتب ماذا تريد ان ارسم لك؟`)
           break;
         case "ai": case "openai": 
           try {
-            if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
-            if (!text) return reply(`Chat dengan AI.\n\nContoh:\n${prefix}${command} Apa itu resesi`);
+            if (setting.keyopenai === "paste the apiky here") return reply(" complete •_• \n\npast apiky in file key.json\n\nyou can get apiky in: https://beta.openai.com/account/api-keys");
+            if (!text) return reply(`ಠ ೧ ಠ \n\n write your questions and I will try to answer it\nاكتب سؤالك وسوف احاول الاجابة عليه\n\nfollow😐:fb.com/oussama.bakrine`);
             const configuration = new Configuration({
               apiKey: setting.keyopenai,
             });
@@ -108,14 +108,14 @@ Membuat gambar dari teks`)
             console.log(`${error.response.status}\n\n${error.response.data}`);
           } else {
             console.log(error);
-            m.reply("Maaf, sepertinya ada yang error :"+ error.message);
+            m.reply("errer error :"+ error.message);
           }
         }
           break;
-        case "img": case "ai-img": case "image": case "images":
+        case "img": case "ai-img": case "image": case "dl":
           try {
-            if (setting.keyopenai === "ISI_APIKEY_OPENAI_DISINI") return reply("Apikey belum diisi\n\nSilahkan isi terlebih dahulu apikeynya di file key.json\n\nApikeynya bisa dibuat di website: https://beta.openai.com/account/api-keys");
-            if (!text) return reply(`Membuat gambar dari AI.\n\nContoh:\n${prefix}${command} Wooden house on snow mountain`);
+            if (setting.keyopenai === "put apiky here") return reply("paste the api in file key.json\n\n You can get the apiky from here: https://beta.openai.com/account/api-keys");
+            if (!text) return reply(`ಠ ೧ ಠ\n\nWrite anything and I will try to draw it\nاكتب اي شيء وسوف احاول رسمه\n\nfollow😐 fb.com/oussama.bakrine`);
             const configuration = new Configuration({
               apiKey: setting.keyopenai,
             });
@@ -134,7 +134,7 @@ Membuat gambar dari teks`)
             console.log(`${error.response.status}\n\n${error.response.data}`);
           } else {
             console.log(error);
-            m.reply("Maaf, sepertinya ada yang error :"+ error.message);
+            m.reply("errer error :"+ error.message);
           }
         }
           break;
@@ -148,7 +148,7 @@ Membuat gambar dari teks`)
               console.log(chalk.black(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("tidak tersedia", "turquoise"));
             } else if (argsLog || (isCmd2 && m.isGroup)) {
               // client.sendReadReceipt(m.chat, m.sender, [m.key.id])
-              console.log(chalk.black(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("tidak tersedia", "turquoise"));
+              console.log(chalk.black(chalk.bgRed("[ ERROR ]")), color("command", "turquoise"), color(`${prefix}${command}`, "turquoise"), color("not found", "turquoise"));
             }
           }
         }
