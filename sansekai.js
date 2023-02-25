@@ -72,20 +72,20 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
       switch (command) {
         case "help":
         case "menu":
-          m.reply(`*Whatsapp Bot OpenAI*
+          m.reply(`*welcome to Whatsapp Bot OpenAI ❤️*
             
-*(ChatGPT)*
-Cmd: ${prefix}ai 
-description :in this cmd Write any question and I will try to answer it.\nفي هذا الامر اكتب اي سؤال وسأحاول الإجابة عليه
+for *ChatGPT*
+Cmd         : ${prefix}ai + text
+description :in this cmd Write any question and I will try to answer it.\n\nفي هذا الامر اكتب اي سؤال وسأحاول الإجابة عليه
 
-*(DALL-E)*
-Cmd: ${prefix}dl
-description :in this cmd write What do you want me to draw for you?\nفي هذا الامر اكتب ماذا تريد ان ارسم لك؟`)
+for *DALL-E*
+Cmd         : ${prefix}dl + text
+description :in this cmd write What do you want me to draw for you?\n\nفي هذا الامر اكتب ماذا تريد ان ارسم لك؟\n\nfollow😐 fb.com/oussama.bakrine`)
           break;
         case "ai": case "openai": 
           try {
             if (setting.keyopenai === "paste the apiky here") return reply(" complete •_• \n\npast apiky in file key.json\n\nyou can get apiky in: https://beta.openai.com/account/api-keys");
-            if (!text) return reply(`ಠ ೧ ಠ \n\n write your questions and I will try to answer it\nاكتب سؤالك وسوف احاول الاجابة عليه\n\nfollow😐:fb.com/oussama.bakrine`);
+            if (!text) return reply(`ಠ ೧ ಠ \n\n •write your questions and I will try to answer it\n\n اكتب سؤالك وسوف احاول الاجابة عليه\n\nfollow😐:fb.com/oussama.bakrine`);
             const configuration = new Configuration({
               apiKey: setting.keyopenai,
             });
